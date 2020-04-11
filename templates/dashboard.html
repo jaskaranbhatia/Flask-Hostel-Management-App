@@ -1,0 +1,147 @@
+{% extends 'admin.html' %}
+
+{% block style%}
+<div class="sidebar-wrapper">
+  <ul class="nav">
+    <li class="active ">
+      <a href="/admin">
+        <i class="nc-icon nc-single-02"></i>
+        <p>Dashboard</p>
+      </a>
+    </li>
+    <li>
+      <a href="/hostels">
+        <i class="nc-icon nc-bank"></i>
+        <p>Hostel Details</p>
+      </a>
+    </li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-5 col-md-4">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-bank text-warning"></i>
+                </div>
+              </div>
+              <div class="col-7 col-md-8">
+                <div class="numbers">
+                  <p class="card-category">Total Hostels</p>
+                  <p class="card-title">{{info.totalhostels}}
+                    <br><br>
+                    <p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-5 col-md-4">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-single-02 text-success"></i>
+                </div>
+              </div>
+              <div class="col-7 col-md-8">
+                <div class="numbers">
+                  <p class="card-category">No. of Boys Hostel</p>
+                  <p class="card-title">{{info.boyshostels}}
+                    <br><br>
+                    <p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-5 col-md-4">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-single-02 text-danger"></i>
+                </div>
+              </div>
+              <div class="col-7 col-md-8">
+                <div class="numbers">
+                  <p class="card-category">No of Girls Hostel</p>
+                  <p class="card-title">{{info.girlshostels}}
+                    <br><br>
+                    <p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-body ">
+            <div class="row">
+              <div class="col-5 col-md-4">
+                <div class="icon-big text-center icon-warning">
+                  <i class="nc-icon nc-badge text-primary"></i>
+                </div>
+              </div>
+              <div class="col-7 col-md-8">
+                <div class="numbers">
+                  <p class="card-category">Total Students</p>
+                  <p class="card-title">{{info.totalstudents}}
+                    <br><br>
+                    <p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <a href="/add-hostel"class="btn btn-primary">Add Hostel <i class="fa fa-plus" aria-hidden="true"></i></a>
+    <a href="/edit-info" class="btn btn-dark">Edit Info <i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <br>
+    <hr>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Total Hostels</th>
+          <th scope="col">No of Boys Hostel</th>
+          <th scope="col">No of Girls Hostel</th>
+          <th scope="col">Total Students</th>
+          <th scope="col">Total Boys</th>
+          <th scope="col">Total Girls</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{info.totalhostels}}</th>
+          <td>{{info.boyshostels}}</td>
+          <td>{{info.girlshostels}}</td>
+          <td>{{info.totalstudents}}</td>
+          <td>{{info.totalboys}}</td>
+          <td>{{info.totalgirls}}</td>
+        </tr>
+      </tbody>
+    </table>
+  <footer class="footer footer-black  footer-white ">
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="footer-nav">
+        </nav>
+      </div>
+    </div>
+  </footer>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'admin.html' %}
+
+{% block style%}
+<div class="sidebar-wrapper">
+  <ul class="nav">
+    <li class="active ">
+      <a href="/admin">
+        <i class="nc-icon nc-single-02"></i>
+        <p>Dashboard</p>
+      </a>
+    </li>
+    <li>
+      <a href="/hostels">
+        <i class="nc-icon nc-bank"></i>
+        <p>Hostel Details</p>
+      </a>
+    </li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+<form action = '/edit-info' method='POST' style="padding-left: 4em;padding-right: 4em;padding-bottom: 4em;padding-top: 0em;">
+    <center><h4>Edit Hostel Details</h4></center>
+    <hr>
+    <div class="form-group"></div>
+    <label for="totalhostels">Total Hostels:</label>
+    <input class="form-control" type="text" name="totalhostels" id="totalhostels" value="{{info.totalhostels}}"}>
+    <br>
+    <label for="boyshostels">Total Boys Hostel:</label>
+    <input class="form-control" type="text" name="boyshostels" id="boyshostels" value="{{info.boyshostels}}" rows=4>
+    <br>
+    <label for="girlshostels">Total Girls Hostel:</label>
+    <input class="form-control" type="text" name="girlshostels" id="girlshostels" value="{{info.girlshostels}}">
+    <br>
+    <label for="totalstudents">Total Students:</label>
+    <input class="form-control" type="text" name="totalstudents" id="totalstudents" value="{{info.totalstudents}}">
+    <br>
+    <label for="totalboys">Total Boys:</label>
+    <input class="form-control" type="text" name="totalboys" id="totalboys" value="{{info.totalboys}}">
+    <br>
+    <label for="totalgirls">Total Girls:</label>
+    <input class="form-control" type="text" name="totalgirls" id="totalgirls" value="{{info.totalgirls}}">
+    <br>
+    <input type="submit" value="Save" class="btn btn-primary">
+    </div>
+</form>
+<hr>
+</div>
+{% endblock %}

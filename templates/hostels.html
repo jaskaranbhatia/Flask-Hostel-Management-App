@@ -1,0 +1,49 @@
+{% extends 'admin.html' %}
+
+{% block style%}
+<div class="sidebar-wrapper">
+  <ul class="nav">
+    <li>
+      <a href="/admin">
+        <i class="nc-icon nc-single-02"></i>
+        <p>Dashboard</p>
+      </a>
+    </li>
+    <li class="active ">
+      <a href="/hostels">
+        <i class="nc-icon nc-bank"></i>
+        <p>Hostel Details</p>
+      </a>
+    </li>
+  </ul>
+</div>
+{% endblock %}
+
+
+
+{% block body %}
+<br><br><br>
+<div style="padding: 4em;">
+    <h2 style="font-weight:500">List of Hostels</h2>
+    <hr>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Hostel Name</th>
+            <th scope="col">Warden</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for hostel in hostels%}
+            <tr>
+            <td>{{hostel.hname}}</td>
+            <td>{{hostel.warden}}</td>
+            <td><a  href="/hostels/edit/{{hostel.id}}" class="btn btn-primary btn-small">Edit <i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="/hostels/delete/{{hostel.id}}" class="btn btn-danger btn-small">Delete <i class="fa fa-times" aria-hidden="true"></i></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+{% endblock %}
